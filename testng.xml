@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ShipServ-Trade" parallel="false">
+	
+	<!-- This tag extends the default reports behavior of TestNG and allows the use of ReportNG report template -->
+	
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter"/>
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+	</listeners>
+	
+	<!-- This file contains path to test classes grouped into per module basis -->
+	
+	<test name="Login">
+		<classes>
+			<class name="shipservtrade.executionEngine.LoginFactoryTest"/>
+		</classes>
+	</test>
+	<test name="Quote">
+		<classes>
+			<class name="shipservtrade.executionEngine.QuoteFactoryTest"/>
+		</classes>
+	</test>
+	<test name="POC">
+		<classes>
+			<class name="shipservtrade.executionEngine.OrdConFactoryTest"/>
+		</classes>
+	</test>
+</suite>

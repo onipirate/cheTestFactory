@@ -1,0 +1,19 @@
+WebDriver Objects and Commands,,,,,,Login,Login
+Scr ID,Test Steps,Object Description,Action,Static Object Value,Notes,Login_1,Login_2
+Login,,,,,,,
+Login,Load browser and open Web URL,,runConfig,,,RUN,RUN
+Login,Enter username,trade.email.txtbx,enter_UserName,,,RUN,RUN
+Login,Enter password,trade.password.txtbx,enter_Password,,,RUN,
+Login,Enter Invalid password,trade.password.txtbx,type,invpwd,,,RUN
+Login,Click on Sign In,trade.signIn.btn,click,,,RUN,RUN
+Login,Login Error Message,trade.login.errmsg,assertLoginErrorMessagePresent,,,,The password is required
+Main Page,,,,,,,
+Main,Click cookies,,clickCookiesAlert,,,RUN,
+Main,Verify displayed text - RFQs,trade.rfq.txt,assertEqualTextPresent,RFQs,,RUN,
+Main Page,,,,,,,
+Logout,Log out from trade,,logOutFromTrade,,,RUN,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,

@@ -1,0 +1,130 @@
+WebDriver Objects and Commands,,,,,,Quote,Quote
+Scr ID,Test Steps,Object Description,Action,Static Object Value,Notes,Quote_1,Quote_2
+Login,,,,,,,
+Login,Load browser and open Web URL,,runConfig,,,RUN,RUN
+Login,Enter username,trade.email.txtbx,enter_UserName,,,RUN,RUN
+Login,Enter password,trade.password.txtbx,enter_Password,,,RUN,RUN
+Login,Click on Sign In,trade.signIn.btn,click,,,RUN,RUN
+Main Page,,,,,,,
+Main,Main Page is displayed,,getPageTitle,Trade,,,
+Main,Click cookies,,clickCookiesAlert,,,RUN,RUN
+Main,Verify displayed text - RFQs,trade.rfq.txt,verifyTextIsPresent,RFQs,,RUN,RUN
+Main_SideBar,,,,,,,
+Main_SideBar,Click RFQ - Unactioned Link,trade.rfq-unactioned.lnk,click,,,RUN,RUN
+Main_SideBar,Click RFQ - Acknowledged Link,trade.rfq-acknowledged.lnk,click,,,,
+Main_SideBar,Click RFQ - Quoted Link,trade.rfq-quoted.lnk,click,,,,
+Main_SideBar,Click RFQ - Replacement Link,trade.rfq-replacement.lnk,click,,,,
+Main_SideBar,Click RFQ - Declined Link,trade.rfq-declined.lnk,click,,,,
+Main_SideBar,Click RFQ - Closed Link,trade.rfq-closed.lnk,click,,,,
+Search Document,,,,,,,
+Search,Choose field by RFQ Ref,trade.choose_fld,click,,,,RUN
+Search,Choose field by Buyer,trade.choose-by-buyer.drpdn,hoverAndClick,,,,RUN
+Search,Choose field by Subject,trade.choose-by-subject.drpdn,hoverAndClick,,,,
+Search,Choose field by Vessel Name,trade.choose-by-vessel.drpdn,hoverAndClick,,,,
+Search,Choose field by Port Name,trade.choose-by-portname.drpdn,hoverAndClick,,,,
+Search,Choose field by Port Country,trade.choose-by-portcountry.drpdn,hoverAndClick,,,,
+Search,Fill up Textbox for Search filter,trade.search.txtbx,enterText,,,,Del Rosario Ship Management (For Demos Only)
+Search,Click Apply button to trigger search,trade.search.btn,click,,,,RUN
+Search,Verify search results show correct document,trade.search-result.txt,verifyTextIsPresent,,,,Del Rosario Ship Management (For Demos Only)
+Search,Click search result link to enter document details,trade.search-result.txt,hoverAndClick,,,,RUN
+Document List,,,,,,,
+Main_Document_List,Verify RFQ - Unactioned text display,trade_doc_list_row1,verifyTextIsPresent,Unactioned,,RUN,RUN
+Main_Document_List,Verify RFQ - Acknowledged text display,trade_doc_list_row1,verifyTextIsPresent,Acknowledged,,,
+Main_Document_List,Verify RFQ - Quoted text display,trade_doc_list_row1,verifyTextIsPresent,Quoted,,,
+Main_Document_List,Verify RFQ - Replacement text display,trade_doc_list_row1,assertEqualTextPresent,Replacement,,,
+Main_Document_List,Verify RFQ - Declined text display,trade_doc_list_row1,verifyTextIsPresent,Declined,,,
+Main_Document_List,Verify RFQ - Closed text display,trade_doc_list_row1,verifyTextIsPresent,Closed,,,
+Main_Document_List,Verify displayed document Buyer Name,trade_doc_list_row1,verifyTextIsPresent,,,,
+Main_Document_List,Verify displayed document Reference,trade_doc_list_row1,verifyTextIsPresent,,,,
+Main_Document_List,Verify displayed document Subject,trade_doc_list_row1,verifyTextIsPresent,,,,
+Main_Document_List,Verify displayed document Vessel Name,trade_doc_list_row1,verifyTextIsPresent,,,,
+Main_Document_List,Verify displayed document Date,trade_doc_list_row1,verifyTextIsPresent,,,,
+Main_Document_List,Verify displayed document Trasaction Owner Name,trade_doc_list_row1,verifyTextIsPresent,,,,
+Main_Document_List,Click Document Link - First Row,trade_doc_list_row1col1,hoverAndClick,,,RUN,
+View Document Header Page,,,,,,,
+View_Document_Header,Click cookies,,clickCookiesAlert,,,RUN,RUN
+View_Document_Header,Verify RFQ will open with status,trade.header-status.txt,assertEqualTextPresent,Buyer Details,,RUN,RUN
+View_Document_Header,Click Create Quote button,trade.header-create-quote.btn,hoverAndClick,,,RUN,RUN
+View_Document_Header,Click Acknowledge button,trade.header-acknowledge.btn,hoverAndClick,,,,
+View_Document_Header,Click Decline button,trade.header-decline-rfq.btn,hoverAndClick,,,,
+Edit Document Header Page,,,,,,,
+Edit_Document_Header,Wait for Page to Load,,waitForPageLoad,,,RUN,RUN
+Edit_Document_Header,Click cookies,,clickCookiesAlert,,,RUN,RUN
+Edit_Document_Header,Verify user is in Create Quote View,trade.edit-header-qot-details.txt,verifyTextIsPresent,Quote Details,,RUN,RUN
+Edit_Document_Header,Enter new Quote Reference,trade.edit-header-ref-no.txtbx,enterReferenceNumber,Quote,,RUN,RUN
+Edit_Document_Header,Enter date for Prices good until,trade.edit-header-expiry.date,calendarPicker,,"Values:
+N = no of days
+RUN = DEFAULT (Static Object Value)",,
+Edit_Document_Header,Enter Offered Quality,trade.edit-header-offered-quality.drpdn,selectByVisibleTextFromDropdownList,Genuine,,RUN,RUN
+Edit_Document_Header,Enter Delivery Terms,trade.edit-header-delivery-terms.drpdn,,,,,
+Edit_Document_Header,Enter For on-time delivery order by,trade.edit-header-order-by.date,selectByVisibleTextFromDropdownList,CFR - Cost and Freight,"Values:
+N = no of days
+RUN = DEFAULT (Static Object Value)",,
+Edit_Document_Header,Enter date for Quoted Delivery,trade.edit-header-quoted-delivery.date,enterText,10,"Values:
+N = no of days
+RUN = DEFAULT (Static Object Value)",15,RUN
+Edit_Document_Header,Enter Supplier Comment,trade.edit-header-supplier-cmt.txtbx,enterText,Auto Supplier Comment,,RUN,RUN
+Edit_Document_Header,Update Supplier Details - Contact Name,trade.edit-header-spb-details-contact-name.txtbx,enterTextIfBlank,,,,
+Edit_Document_Header,Update Supplier Details - Email,trade.edit-header-spb-details-email.txtbx,enterTextIfBlank,,,,
+Edit_Document_Header,Update Supplier Details - Phone,trade.edit-header-spb-details-phone.txtbx,enterTextIfBlank,,,,
+Edit_Document_Header,Update Supplier Details - Company Phone,trade.edit-header-spb-details-co-phone.txtbx,enterTextIfBlank,,,,
+Edit_Document_Header,Update Supplier Details - Company Email,trade.edit-header-spb-details-co-email.txtbx,enterTextIfBlank,,,,
+Edit Document Line Item Page,,,,,,,
+Edit_Document_LineItem,Click on Line Items tab,trade.edit-li-line-tab.lnk,hoverAndClick,,,RUN,RUN
+Edit_Document_LineItem,Wait for Page to Load,,waitForPageLoad,,,RUN,RUN
+Edit_Document_LineItem,Verify user is in Line Items tab - Editable View,trade.edit-li-unit-cost-header.txt,verifyTextIsPresent,Unit Cost,,RUN,RUN
+Edit_Document_LineItem,Update Line Item - Currency,trade.edit-li-currency.lbl,enterText,,,,
+Edit_Document_LineItem,Update Line Item - Part Type Line Item 1,trade.edit-li-part-type-line1.txtbx,enterText,,,,
+Edit_Document_LineItem,Update Line Item - Part Number Line 1,trade.edit-li-identification-line1.txtbx,enterText,,,,
+Edit_Document_LineItem,Update Line Item - Description Line 1,trade.edit-li-description-line1.txtbx,enterText,,,,
+Edit_Document_LineItem,Update Line Item - Custom Code Line 1,trade.edit-li-custom-code-line1.txtbx,enterText,,,,
+Edit_Document_LineItem,Update Line Item - Quantity Line 1,trade.edit-li-quantity-line1.txtbx,enterText,,,,
+Edit_Document_LineItem,Update Line Item - Unit of Measure Line 1,trade.edit-li-uom-line1.txtbx,enterText,,,,
+Edit_Document_LineItem,Enter value in Unit Cost in line item 1,trade.edit-li-unit-cost-line1.txtbx,hoverAndEnterText,2,,RUN,RUN
+Edit_Document_LineItem,Enter value in Unit Discount in line item 1,trade.edit-li-unit-discount-line1.txtbx,enterText,,,,
+Edit_Document_LineItem,Click on Line Item supplier comment icon,trade.edit-li-comment-line1.lnk,hoverAndDoubleClick,,,RUN,RUN
+Edit_Document_LineItem,Enter text in supplier comment (line 1),trade.edit-li-comment-line1.txtbx,enterText,Auto Supplier Line Comment,,RUN,RUN
+Edit_Document_LineItem,Close supplier comment text box field,trade.edit-li-comment-close-line1.lnk,hoverAndClick,,,RUN,RUN
+Edit_Document_LineItem,Click Add Line Item button,trade.edit-li-add-new-line.btn,hoverAndClick,,,,
+Edit_Document_LineItem,Add Line Item - Part Type,trade.edit-li-new-part-type.txtbx,enterText,,,,
+Edit_Document_LineItem,Add Line Item - Part Number,trade.edit-li-new-identification.txtbx,enterText,,,,
+Edit_Document_LineItem,Add Line Item - Description,trade.edit-li-new-description.txtbx,enterText,,,,
+Edit_Document_LineItem,Add Line Item - Custom Code,trade.edit-li-new-custom-code.txtbx,enterText,,,,
+Edit_Document_LineItem,Add Line Item - Quantity ,trade.edit-li-new-quantity.txtbx,enterText,,,,
+Edit_Document_LineItem,Add Line Item - Unit of Measure,trade.edit-li-new-uom.txtbx,enterText,,,,
+Edit_Document_LineItem,Add Line Item - Unit Cost,trade.edit-li-new-unit-cost.txtbx,enterText,,,,
+Edit_Document_LineItem,Add Line Item - Unit Discount,trade.edit-li-new-unit-discount.txtbx,enterText,,,,
+Edit_Document_LineItem,Add Line Item - Supplier Comment icon,trade.edit-li-new-comment.lnk,hoverAndClick,,,,
+Edit_Document_LineItem,Add Line Item - Supplier Comment Text,trade.edit-li-new-comment.txtbx,enterText,,,,
+Edit_Document_LineItem,Add Line Item - Colse Supplier Comment Text box,trade.edit-li-new-comment-close.lnk,,,,,
+Edit_Document_LineItem,Enter value in Unit Cost in ALL line items (For multiple lines),,enterText,,,,
+Edit_Document_LineItem,Enter value in Unit Discount in ALL line item (For multiple lines),,enterText,,,,
+Edit Document Payment & Terms Page,,,,,,,
+Payment_Terms,Click on Payment & Terms tab,trade.pt-tab.lnk,click,,,RUN,RUN
+Payment_Terms,Wait for Page to Load,,waitForPageLoad,,,RUN,RUN
+Payment_Terms,Verify user is in Payment & Terms tab,trade.pt-tab.lnk,verifyTextIsPresent,Payment & Terms,,RUN,RUN
+Payment_Terms,Enter text in Payment Terms,trade.pt-sup-payment-terms.txtbx,enterText,Auto Payment Terms,,RUN,RUN
+Payment_Terms,Enter text in Currency Instructions,trade.pt-currency-instruction.txtbx,enterText,Auto Currency Instructions,,RUN,RUN
+Payment_Terms,Enter text in Terms And Conditions,trade.pt-sup-terms-conditions.txtbx,enterText,Auto Terms And Conditions,,RUN,RUN
+Document Preview Page,,,,,,,
+Preview_Document,Wait for Page to Load,,waitForPageLoad,,,RUN,RUN
+Preview_Document,Click on Preview tab,trade.preview-tab.lnk,hoverAndClick,,,RUN,RUN
+Preview_Document,Verify user is in Preview tab,trade.preview-tab.lnk,verifyElementIsEnabled,,,RUN,RUN
+Preview_Document,Click on Submit button,trade.preview-submit.btn,submitDocument,,,RUN,RUN
+Preview_Document,Click on Cancel button,trade.preview-cancel.btn,hoverAndClick,,,,
+Preview_Document,Click on Save Draft button,trade.preview-save-draft.btn,hoverAndClick,,,,
+Preview_Document,Wait for Page to Load,,waitForPageLoad,,,RUN,RUN
+Document Submitted Page,,,,,,,
+Submitted_Page,Verify successful submission of Quote,trade.submit-status.txt,assertEqualTextPresent,Submitted,,RUN,RUN
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,

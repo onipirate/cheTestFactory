@@ -1,0 +1,3 @@
+TC No,Description,Test Case,Code,Trade
+1,Create Quote from Existing RFQ in Trade,Quote_1,1,SKIP
+2,Create Quote using Search filter - Subject,Quote_2,2,RUN
